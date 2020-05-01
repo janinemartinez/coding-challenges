@@ -112,4 +112,65 @@ def div_by_all(rng):
                 current+=rng
                 break
 
-print(div_by_all(20))
+# print(div_by_all(20))
+            
+# The sum of the squares of the first ten natural numbers is,
+
+# 1**2+2**2+...+10**2=385
+# The square of the sum of the first ten natural numbers is,
+
+# (1+2+...+10)**2=552=3025
+# Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025−385=2640.
+
+# Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum. 
+
+def sqrs_from_sqr(rng):
+
+    nums = list(range(1, rng+1))
+
+    sumsqrs = 0
+
+    for i in nums:
+        sumsqrs += i**2
+
+    return (sum(nums))**2 - sumsqrs
+
+# print(sqrs_from_sqr(100))
+
+# By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+
+# What is the 10 001st prime number?
+
+def prime_finder():
+
+    num=2
+    while True:
+        for y in range(2, num/2 +1):
+            if num % y == 0:
+                break
+        else:
+            yield num
+        num = num + 1
+    print(num)
+
+print(prime_finder())
+
+"""earlier try"""
+#     primes = [2]
+
+#     while len(primes) < num:
+#         for j in primes:
+#             if i // j != 0:
+#                 if j == primes[-1]:
+#                     primes.append(i)
+#                 else:
+#                     continue
+#             else:
+#                 break
+
+#     return primes[-1]
+
+# print(prime_finder(2))
+            
+
+
